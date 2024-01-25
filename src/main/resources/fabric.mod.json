@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "create_enderite",
+	"version": "${version}",
+	"name": "Create Enderite",
+	"description": "This is a mod that adds compatibility between the Create mod and the Enderite mod by adding the enderite backtank, diving boots and diving mask.",
+	"authors": [
+		"kynzo"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/create_enderite/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.kynzo.create_enderite.CreateEnderite"
+		],
+		"client": [
+			"net.kynzo.create_enderite.CreateEnderiteClient"
+		],
+		"fabric-datagen": [
+			"net.kynzo.create_enderite.CreateEnderiteDataGenerator"
+		]
+	},
+	"mixins": [
+		"create_enderite.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.6",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
