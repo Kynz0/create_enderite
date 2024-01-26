@@ -8,8 +8,9 @@
 		"kynzo"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://linktr.ee/kynzo",
+		"sources": "https://github.com/Kynz0/create_enderite",
+		"issues": "https://github.com/Kynz0/create_enderite/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/create_enderite/icon.png",
