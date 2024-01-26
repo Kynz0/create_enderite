@@ -19,7 +19,7 @@ repositories {
     // for more information about repositories.
 //	maven { url = "https://maven.shedaniel.me/" } // Cloth Config, REI
 //	maven { url = "https://dvs1.progwml6.com/files/maven/" } // JEI
-//	maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
+	maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
 //	maven { url = "https://maven.quiltmc.org/repository/release" } // Quilt Mappings
 //	maven { url = "https://api.modrinth.com/maven" } // LazyDFU
 //	maven { url = "https://maven.terraformersmc.com/releases/" } // Mod Menu
@@ -41,8 +41,15 @@ fabricApi {
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+//    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    // Layered mappings using official mojang mappings and parchment.
+    mappings loom.layered() {
+        officialMojangMappings()
+        // Use parchment mappings. NOTE: Parchment maven must be manually added. (https://maven.parchmentmc.org)
+        parchment("org.parchmentmc.data:parchment-1.17.1:2021.09.05@zip")
+    }
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"

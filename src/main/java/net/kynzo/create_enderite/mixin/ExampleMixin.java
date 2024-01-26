@@ -8,8 +8,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(MinecraftServer.class)
 public class ExampleMixin {
-	@Inject(at = @At("HEAD"), method = "loadWorld")
-	private void init(CallbackInfo info) {
-		// This code is injected into the start of MinecraftServer.loadWorld()V
-	}
+    //no idea why this is here it crashed the game whenever i tried to start it so i just commented it and now it finally works perfectly fine
+//	@Inject(at = @At("HEAD"), method = "loadWorld", cancellable = true)
+//	private void init(CallbackInfo info) {
+//		// This code is injected into the start of MinecraftServer.loadWorld()V
+//	}
 }
