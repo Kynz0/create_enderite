@@ -21,7 +21,7 @@ repositories {
 //	maven { url = "https://dvs1.progwml6.com/files/maven/" } // JEI
 	maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
 //	maven { url = "https://maven.quiltmc.org/repository/release" } // Quilt Mappings
-//	maven { url = "https://api.modrinth.com/maven" } // LazyDFU
+	maven { url = "https://api.modrinth.com/maven" } // LazyDFU
 	maven { url = "https://maven.terraformersmc.com/releases/" } // Mod Menu
     maven { url = "https://mvn.devos.one/snapshots/" } // Create, Porting Lib, Forge Tags, Milk Lib, Registrate
     maven { url = "https://cursemaven.com" } // Forge Config API Port
@@ -32,6 +32,7 @@ repositories {
         url = "https://maven.jamieswhiteshirt.com/libs-release"
         content { includeGroup("com.jamieswhiteshirt") }
     }
+    maven { url = "https://github.com/Nic4Las/Minecraft-Enderite-Mod.git"}
 }
 
 fabricApi {
@@ -56,6 +57,12 @@ dependencies {
 
     // Create implementation
     modImplementation "com.simibubi.create:create-fabric-${minecraft_version}:${create_version}"
+
+    // enderite mod implementation
+    modImplementation "maven.modrinth:enderite-mod:nY9n0Vnn"
+
+    // architectury api (required by the enderite mod)
+    modImplementation "maven.modrinth:architectury-api:9.1.12+fabric"
 
     //Development QOL
     modLocalRuntime("com.terraformersmc:modmenu:${modmenu_version}")
